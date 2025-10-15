@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" style="color-scheme: dark;"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam archives | IDK PHYSICS</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/other.css">
+    <link rel="stylesheet" href="css/exam.css">   
+</head>
+<body>
+    <div class="navbar-container" id="navbarContainer">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo/BH.png" alt="Black Hole Logo">
+                <div id="logo-text">
+                    <span>I</span><span>D</span><span>K</span>
+                    <span> </span><span> </span><span> </span>
+                    <span>P</span><span>H</span><span>Y</span><span>S</span><span>I</span><span>C</span><span>S</span>
+                </div>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="#">Exam archives</a></li>
+                    <li><a href="animations.html">Physics Animations</a></li>
+                    <li><a href="equations.html">Prove physics equations</a></li>
+                    <!-- <li><a href="news.html">Physics news</a></li> -->
+                    <li><a href="https://discord.gg/KEmt9jtw" target="_blank">Join our Discord</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+<!-- ตรงนี้เขียนข้อมูลเดะเพิ่มรูปทีหลัง -->
+    <main class="content other-page">
+        <div class="text-content">
+            <h1>Exam archives</h1>
+        </div>
+        <div class="exam-list">
+            <div class="exam-item">
+                <div class="exam-name">วิชาสามัญ</div>
+                <button class="download-btn" data-exam="วิชาสามัญ">
+                    <img src="logo/8777583.png" alt="Download Icon">
+                </button>
+            </div>
+            
+            <div class="exam-item">
+                <div class="exam-name">A-level</div>
+                <button class="download-btn" data-exam="A-level">
+                    <img src="logo/8777583.png" alt="Download Icon">
+                </button>
+            </div>
+            <div class="exam-item">
+                <div class="exam-name">Entrance</div>
+                <button class="download-btn" data-exam="Entrance">
+                    <img src="logo/8777583.png" alt="Download Icon">
+                </button>
+            </div>
+        </div>
+        
+        <div id="download-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" id="options-close">&times;</span>
+                <h2 id="modal-title">Download options</h2>
+                <div id="modal-links"></div>
+            </div>
+        </div>
+
+        <div class="mobile-menu-icon" id="mobileMenuIcon">
+            <img src="logo/BH.png" alt="Black Hole Logo">
+            <span class="menu-icon-bars">&#9776;</span> 
+            <span class="menu-icon-close">&times;</span> 
+        </div>
+        
+    </main>
+
+    <!-- <footer class="footer">
+        <p>IDK PHYSICS | Developed by Chayapat</p>
+    </footer> -->
+
+    <script src="js/main.js"></script>
+    <script src="js/exam.js"></script>
+    
+</body>
+</html>
+
