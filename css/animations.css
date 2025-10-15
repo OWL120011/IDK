@@ -1,0 +1,125 @@
+.animations-content {
+    padding: 100px 20px 50px 20px; 
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.simulation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px; 
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.simulation-card {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    overflow: hidden; 
+    text-decoration: none; 
+    color: #fff;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+    cursor: pointer;
+}
+
+.simulation-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    background-color: rgba(255, 255, 255, 0.15); 
+}
+
+.simulation-card img {
+    width: 100%;
+    height: 180px; 
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.simulation-card .card-info {
+    padding: 15px;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.simulation-card .card-info h3 {
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #4a90e2; 
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); 
+    
+    justify-content: center;   
+    align-items: center;       
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    position: relative;
+    max-width: 95%; 
+    margin: 0;
+}
+
+
+.large-modal-content {
+    width: 90%; 
+    max-width: 1000px; 
+    height: 90vh; 
+    display: flex;
+    flex-direction: column; 
+}
+
+.close-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 2001; 
+}
+
+.close-btn:hover {
+    color: #fff;
+}
+
+.sim-iframe-wrapper {
+    flex-grow: 1; 
+    overflow: hidden; 
+    margin-top: 15px;
+    height: 100%; 
+}
+
+.sim-iframe-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: #fff; 
+}
+
+@media (max-width: 768px) {
+    .simulation-grid {
+        grid-template-columns: 1fr;
+    }
+    .large-modal-content {
+        height: 80vh; 
+    }
+}

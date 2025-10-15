@@ -1,0 +1,221 @@
+@import url(https://fonts.google.com/specimen/Cinzel+Decorative);
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    color: #fff;
+    background: url('logo/vecteezy_black-background-with-a-white-light-in-the-middle_65752653.jpg') no-repeat center center fixed;
+    background-color: #000;
+    background-size: cover;
+    font-family: "Cinzel Decorative", serif;
+    
+}
+
+#logo-text {
+    display: flex;
+    white-space: nowrap;
+}
+
+#logo-text span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    transform: translateX(100%);
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-content h1 {
+    font-size: 2rem;
+}
+
+.text-content p {
+    font-size: 1.2rem;
+}
+
+.text-content {
+    text-align: center;
+    animation: slideDown 1s ease-out forwards;
+}
+
+.navbar-container {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-container.scrolled .navbar {
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease-in-out;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-container.scrolled .logo img {
+    height: 30px;
+}
+
+.navbar-container.scrolled .logo span {
+    font-size: 1.2rem;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 8px 15px; 
+    border-radius: 5px; 
+    transition: all 0.3s ease; 
+}
+
+.menu a:hover {
+    background-color: rgba(128, 128, 128, 0.3); 
+    color: #4a90e2; 
+}
+
+.mobile-menu-icon {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    align-items: center;
+    gap: 10px;
+}
+
+.mobile-menu-icon img {
+    height: 40px;
+}
+
+.mobile-menu-icon span {
+    font-size: 2rem;
+}
+
+.mobile-menu-icon .menu-icon-bars {
+    display: block; 
+    font-size: 2rem;
+    color: white; 
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu-icon .menu-icon-close {
+    display: none; 
+    font-size: 2.5rem; 
+    color: white; 
+    font-weight: bold;
+    transform: rotate(-90deg); 
+    transition: transform 0.3s ease;
+}
+
+.navbar.active + .content .mobile-menu-icon .menu-icon-bars {
+    display: none; 
+}
+
+.navbar.active + .content .mobile-menu-icon .menu-icon-close {
+    display: block; 
+    transform: rotate(0deg);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+    .mobile-menu-icon {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        padding: 8px 12px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        
+        top: 15px;
+        left: 15px; 
+    }
+    .mobile-menu-icon {
+        display: flex; 
+    }
+    .mobile-menu-icon img {
+        opacity: 0.8;
+    }
+    .navbar.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 999; 
+    }
+    .navbar.active .menu ul {
+        flex-direction: column;
+    }
+    .navbar.active .menu li {
+        margin: 20px 0;
+    }
+    .navbar-container.scrolled {
+        transform: translateY(0);
+    }
+}

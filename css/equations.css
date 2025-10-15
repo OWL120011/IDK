@@ -1,0 +1,189 @@
+.accordion-container {
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 20px; 
+    display: flex; 
+    flex-direction: column;
+    padding: 50px; 
+}
+
+.accordion-item {
+    border-radius: 15px; 
+    overflow: hidden; 
+    border: none; 
+    box-shadow: none; 
+}
+
+.accordion-header {
+    background-color: #3c3c3cb3; 
+    padding: 20px 30px;
+    border-radius: 15px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.accordion-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.accordion-header:hover {
+    transform: translateY(-5px); 
+    background-color: #4a4a4a; 
+}
+
+.accordion-header.active {
+    transform: none; 
+    border-bottom-left-radius: 0; 
+    border-bottom-right-radius: 0;
+    background-color: #4a4a4a; 
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.03); 
+    padding: 0 30px; 
+}
+
+.accordion-content.active {
+    max-height: 1000px; 
+    padding: 15px 30px 20px 30px; 
+    border-bottom-left-radius: 15px; 
+    border-bottom-right-radius: 15px; 
+    border-top: none;
+}
+
+.subtopic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.subtopic-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(74, 144, 226, 0.5);
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff; 
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    min-height: 40px; 
+}
+
+.subtopic-card:hover {
+    background-color: rgba(74, 144, 226, 0.2); 
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+.subtopic-card.active-selected {
+    background-color: #4a90e2; 
+    color: #000;
+    font-weight: 700;
+    box-shadow: 0 0 15px rgba(74, 144, 226, 0.7);
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); 
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #3c3c3cb3; 
+    padding: 30px;
+    border: 1px solid #4a90e2;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 700px;
+    position: relative;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.7);
+    max-height: 80vh; 
+    overflow-y: auto; 
+    animation: fadeIn 0.3s ease-out;
+}
+
+.close-btn {
+    color: #fff;
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #4a90e2;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.content-title {
+    font-family: "Cinzel Decorative", serif;
+    font-size: 2rem;
+    color: #fff;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.formula-box {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #4a90e2;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.formula-box h4 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.formula-box .formula {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    color: #4a90e2;
+    font-weight: 700;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.formula-box .formula-desc {
+    font-size: 1rem;
+    color: #ccc;
+    margin-top: 15px;
+    font-style: italic;
+}
